@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Checkout</title>
+    </head>
+    <body>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <h2>Payment Information</h2>
+            <label for="credit_card_number">Credit Card Number</label>
+            <input id="credit_card_number" type="number" name="credit_card_number" placeholder="enter credit card number" autofocus="autofocus" required>
+            <br>
+            <label for="expiration_month_year">Expiration month/year</label>
+            <input id="expiration_month_year" type="date" name="expiration_month_year" required>
+            <br>
+            <label for="security_code">Security Code</label>
+            <input id="security_code" type="number" name="security_code" placeholder="enter security code" required>
+            <br>
+            <h2>Billing Address</h2>
+            <label for="first_name">First Name</label>
+            <input id="first_name" type="text" name="first_name" placeholder="enter first name" required>
+            <label for="last_name">Last Name</label>
+            <input id="last_name" type="text" name="last_name" placeholder="enter last name" required>
+            <br>
+            <label for="street_address">Address</label>
+            <input id="street_address" type="text" name="street_address" placeholder="enter street address" required>
+            <label for="city">City</label>
+            <input id="city" type="text" name="city" placeholder="enter city" required>
+            <br>
+            <label for="state_territory">State / Territory</label>
+            <input id="state_territory" type="text" name="state_territory" placeholder="enter state / territory" required>
+            <label for="zipcode">Zipcode</label>
+            <input id="zipcode" type="number" name="zipcode" placeholder="enter zipcode" required>
+            <br>
+            <label for="country_or_region">Country or region</label>
+            <input id="country_or_region" type="text" name="country_or_region" placeholder="enter country or region" required>
+            <br>
+            <label for="keep_card_on_file"><input id="keep_card_on_file" type="checkbox" checked>Keep this credit on file for future transaction.</label>
+            <br>
+            <button type="submit">Buy Now!</button>
+        </form>
+    </body>
+</html>
