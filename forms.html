@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register With Us</title>
+    </head>
+    <body>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="enter your email">
+            <br>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="enter your password">
+            <br>
+            <textarea name="bio" rows="10" cols="100">enter your bio</textarea>
+            <h3>How did you hear about us?</h3>
+            <label for="billboard"><input id="billboard" type="radio" name="q1a1" value="billboard">Billboard</label>
+            <label for="radio_advertisement"><input id="radio_advertisement" type="radio" name="q1a2" value="radio-advertisement">Radio Advertisement</label>
+            <label for="internet_advertisement"><input id="internet_advertisement" type="radio" name="q1a3" value="internet_advertisement">Internet Advertisement</label>
+            <label for="other"><input id="other" type="radio" name="q1a4" value="other">Other</label>
+            <br>
+            <label for="browser_preference">What browser are you using?</label>
+            <select id="browser_preference" name="browser_preference">
+                <option value="chrome">Chrome</option>
+                <option value="firefox">Firefox</option>
+                <option value="safari">Safari</option>
+                <option value="opera">Opera</option>
+                <option value="internet explorer">Internet Explorer</option>
+            </select>
+            <br>
+            <label for="favorite_color">What is your favorite color?</label>
+            <input id="favorite_color" type="color" name="favorite_color">
+            <br>
+            <label for="birthday">What is your date of birth?</label>
+            <input id="birthday" type="date" name="birthday">
+            <br>
+            <label for="hunger_scale">How hungry are you?</label>
+            <input id="hunger_scale" type="range" name="hunger_scale" min="0" max="10">
+            <br>
+            <label for="phone_number">What is your phone number?</label>
+            <input id="phone_number" type="tel" name="phone_number">
+            <br>
+            <button type="submit">Submit the form</button>
+        </form>
+    </body>
+</html>
