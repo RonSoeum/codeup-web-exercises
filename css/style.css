@@ -1,3 +1,55 @@
+body {
+    background-color: #DAF7A6;
+    background-image: url(../images/oriental.png);
+    font-family: "Gill Sans", sans-serif;
+    font-size: 1.1em;
+}
+
+header {
+    text-align: center;
+}
+
 .fancy-header {
-    color: purple;
+    color: #4A235A;
+}
+
+h1, h2 {
+    text-decoration: underline;
+    color: #8D1135;
+}
+
+li {
+    list-style-type: circle;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 350px;
+    border: 1px dashed #DDDDDD;
+    box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 5px #DDDDDD, 0 0 0 10px #FFFFFF, 0 0 2px 10px #EEEEEE;
+}
+
+table.product, .product tr {
+    border: 1px solid black;
+}
+
+th, td {
+    font-size: 1.2em;
+}
+
+a:hover {
+    color: #000000;
+}
+
+a:visited {
+    color: #FF0000;
+}
+
+a:link {
+    color: #00FF00;
+}
+
+a:active {
+    color: #0000FF;
 }
