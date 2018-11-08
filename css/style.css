@@ -1,5 +1,5 @@
 body {
-    background-color: #DAF7A6;
+    background-color: #808080;
     background-image: url(../images/oriental.png);
     font-family: "Gill Sans", sans-serif;
     font-size: 1.1em;
@@ -13,13 +13,28 @@ header {
     color: #4A235A;
 }
 
+.container {
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
 h1, h2 {
     text-decoration: underline;
     color: #8D1135;
+    text-align: center;
+}
+
+ol, ul {
+    display: inline-block;
+    text-align: left;
+    padding: 0px;
+    margin-top: 0px;
 }
 
 li {
     list-style-type: circle;
+    list-style-position: inside;
 }
 
 table {
