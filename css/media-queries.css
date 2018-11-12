@@ -1,4 +1,4 @@
-@media screen and (max-width:480px) {
+@media screen and (max-width:768px) {
     * {
         box-sizing: border-box;
     }
@@ -10,7 +10,6 @@
         margin: auto;
         padding-top: .7em;
         padding-bottom: .7em;
-        width: calc(100% - .5em);
         border: 2px solid #D3D3D3;
         background-color: #C0FFFE;
         text-align: center;
@@ -24,15 +23,10 @@
         text-align: center;
         font-size: 300%;
     }
-    nav  {
-        margin: 0 auto;
-        width: 100%;
-    }
     ul {
         display: table;
         margin: 0 auto;
         padding: 0;
-        width: 100%;
     }
     li {
         background-color: #D3D3D3;
@@ -41,33 +35,25 @@
         padding-top: .7em;
         padding-bottom: .7em;
         text-align: center;
-        margin: .5em .25em;
+        margin: .5em 0 .5em 0;
     }
     .header-img {
         margin: 0 auto;
-        width: calc(100% - .5em);
         clear: both;
     }
     img {
         margin: .5em auto;
-        width: 100%;
-    }
-    .main {
-        margin: .25em;
     }
     .sub-section {
-        margin: .25em;
         font-style: italic;
     }
     footer {
         float: left;
         margin: 0 auto;
-        width: 100%;
     }
     footer p {
         margin: 0 0 0 .5em;
         padding-top: 8em;
-        /*clear: both;*/
         font-size: .8em;
         float: left;
     }
@@ -81,7 +67,7 @@
     }
 }
 
-@media screen and (min-width:481px) {
+@media screen and (min-width:769px) {
     * {
         box-sizing: border-box;
     }
@@ -92,11 +78,7 @@
         display: block;
         visibility: hidden;
     }
-    h1 {
-        float: left;
-        margin-left: .25em;
-    }
-    nav {
+    #nav-links {
         float: right;
         padding-top: 1em;
     }
@@ -105,35 +87,18 @@
         display: inline-block;
         margin-right: .6em;
     }
-    .header-img {
-        margin: 0 auto;
-        width: calc(100% - 1em);
-        clear: both;
+    li.contact {
+        margin-right: 0;
     }
     img {
         margin: .5em auto;
-        width: 100%;
-    }
-    .main {
-        float: left;
-        width: calc(60% - 1em);
-        margin: .5em;
     }
     .sub-section {
-        float: right;
-        width: calc(40% - 1em);
-        margin: .5em;
         font-style: italic;
-    }
-    footer {
-        float: left;
-        margin: 0 auto;
-        width: 100%;
     }
     footer p {
         margin: 0 0 0 .5em;
         padding-top: 8em;
-        /*clear: both;*/
         font-size: .8em;
         float: left;
     }

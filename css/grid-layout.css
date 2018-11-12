@@ -20,18 +20,10 @@
 
     .column {
         float: left;
-        padding: 10px;
-        border: 1px solid #FFFFFF;
-        background-color: #848487;
     }
 
-    .column.one-half, .column.one-third, .column.one-fourth, .column.one-sixth, .column.one-eight {
+    .full, .column.one-half, .column.one-third, .column.one-fourth, .column.one-sixth, .column.one-eight {
         width: 100%;
-    }
-
-    p {
-        color: #FFFFFF;
-        text-align: center;
     }
 }
 
@@ -57,32 +49,13 @@
 
     .column {
         float: left;
-        padding: 10px;
-        border: 1px solid #FFFFFF;
-        background-color: #848487;
+    }
+
+    .column.full {
+        width: 100%;
     }
 
     .column.one-half {
         width: 50%;
-    }
-
-    .column.one-third {
-        width: 33.33%;
-    }
-
-    .column.one-fourth {
-        width: 25%;
-    }
-
-    .column.one-sixth {
-        width: 16.66%;
-    }
-
-    .column.one-eight {
-        width: 12.5%;
-    }
-    p {
-        color: #FFFFFF;
-        text-align: center;
     }
 }
