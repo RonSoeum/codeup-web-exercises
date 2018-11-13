@@ -6,52 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Order Pizza</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light border rounded m-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Pizza World</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Order online</a>
+
+        <div class="navbar-collapse collapse show" id="navbarColor03" style="">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Order online <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Menu</a>
                 </li>
             </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Zipcode">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search stores near you">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user-plus"></i> Sign up</a>
+                </li>
+            </ul>
         </div>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="text" placeholder="Zipcode" aria-label="zipcode">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search stores near you" aria-label="search">
-        </form>
-        <img src="images/signup.png" alt="signup">
-        <a class="nav-link" href="#">Sign up</a>
     </nav>
+
     <div class="container-fluid">
         <div class="jumbotron text-center">
             <h1 class="display-3">Welcome to Pizza World!</h1>
         </div>
         <h2 class="font-weight-normal border-bottom pb-3">Build your own pizza!</h2>
-        <nav class="navbar navbar-light bg-light">
-            <div>
-                <ul class="nav nav-tabs">
-                    <li class="nav-item"><a class="nav-link active" href="#sizecrust"><span class="badge badge-secondary">1</span>Size and crust</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cheesesauce"><span class="badge badge-secondary">2</span>Cheese and sauce</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#toppings"><span class="badge badge-secondary">3</span>Toppings</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="card">
-            <div id="sizecrust" class="card-header bg-primary text-white">Choose size and crust</div>
+        <div class="navbar navbar-light bg-light">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active show" data-toggle="tab" href="#sizecrust"><span class="badge badge-secondary">1</span>Size and crust</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#cheesesauce"><span class="badge badge-secondary">2</span>Cheese and sauce</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#toppings"><span class="badge badge-secondary">3</span>Toppings</a>
+                </li>
+            </ul>
+        </div>
+
+        <div  class="card">
+            <div id="sizecrust" class="card-header bg-info text-white">Choose size and crust</div>
                 <div class="card-body">
                     <div class="card-header border">Hand Tossed</div>
                     <div class="card-body border-left border-right">Garlic seasoned crust with a rich, buttery taste.</div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item border">
+                        <li class="list-group-item border bg-info text-white">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="small_ht" id="small_ht" value="small_ht">
                                 <label class="form-check-label" for="small_ht">
@@ -59,7 +71,7 @@
                                 </label>
                             </div>
                         </li>
-                        <li class="list-group-item border">
+                        <li class="list-group-item border bg-info text-white">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="medium_ht" id="medium_ht" value="medium_ht">
                                 <label class="form-check-label" for="medium_ht">
@@ -73,7 +85,7 @@
                     <div class="card-header border">Crispy Thin</div>
                     <div class="card-body border-left border-right">Thin enough for optimum crispy to crunchy ratio.</div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item border">
+                        <li class="list-group-item border bg-info text-white">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="medium_ct" id="medium_ct" value="medium_ct">
                                 <label class="form-check-label" for="medium_ct">
@@ -81,7 +93,7 @@
                                 </label>
                             </div>
                         </li>
-                        <li class="list-group-item border">
+                        <li class="list-group-item border bg-info text-white">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="large_ct" id="large_ct" value="large_ct">
                                 <label class="form-check-label" for="large_ct">
@@ -92,14 +104,15 @@
                     </ul>
                 </div>
             <div class="card-footer">
-                <button type="submit" class="float-right btn btn-primary">Next Step ></button>
+                <button type="submit" class="float-right btn btn-primary">Next Step <i class="fas fa-caret-right"></i></button>
             </div>
         </div>
+
         <div class="card mt-4">
-            <div id="cheesesauce" class="card-header bg-primary text-white">Choose Cheese and Sauce</div>
+            <div id="cheesesauce" class="card-header bg-info text-white">Choose Cheese and Sauce</div>
             <div class="card-body">
                 <div class="card-header border">Cheese</div>
-                <div class="card-body border form-group">
+                <div class="card-body border form-group bg-info text-white">
                     <label for="much_c">How Much?</label>
                     <select class="form-control" id="much_c">
                         <option>Light</option>
@@ -109,7 +122,7 @@
                     </select>
                 </div>
                 <div class="card-header border">Sauce</div>
-                <div class="card-body border m-0 form-group">
+                <div class="card-body border m-0 form-group bg-info text-white">
                     <label for="type_s">What Type?</label>
                     <select class="form-control" id="type_s">
                         <option>Tomato Sauce</option>
@@ -118,7 +131,7 @@
                         <option>Alfredo Sauce</option>
                     </select>
                 </div>
-                <div class="card-body border form-group mb-0">
+                <div class="card-body border form-group mb-0 bg-info text-white">
                     <label for="much_s">How Much?</label>
                     <select class="form-control" id="much_s">
                         <option>Light</option>
@@ -128,16 +141,17 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="float-right btn btn-primary">Next step ></button>
-                <button type="submit" class="float-right btn btn-primary">< Previous step</button>
+                <button type="submit" class="float-right btn btn-primary">Next step <i class="fas fa-caret-right"></i></button>
+                <button type="submit" class="float-right btn btn-primary"><i class="fas fa-caret-left"></i> Previous step</button>
             </div>
         </div>
+
         <div class="card mt-4">
-            <div id="toppings" class="card-header bg-primary text-white">Choose toppings</div>
+            <div id="toppings" class="card-header bg-info text-white">Choose toppings</div>
             <div class="card-body">
                 <div class="card-header border">Choose meats</div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item border">
+                    <li class="list-group-item border bg-info text-white">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="beef" id="beef" value="beef">
                             <label class="form-check-label" for="beef">
@@ -145,7 +159,7 @@
                             </label>
                         </div>
                     </li>
-                    <li class="list-group-item border">
+                    <li class="list-group-item border bg-info text-white">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="ham" id="ham" value="ham">
                             <label class="form-check-label" for="ham">
@@ -153,7 +167,7 @@
                             </label>
                         </div>
                     </li>
-                    <li class="list-group-item border">
+                    <li class="list-group-item border bg-info text-white">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="phillysteak" id="phillysteak" value="phillysteak">
                             <label class="form-check-label" for="phillysteak">
@@ -161,7 +175,7 @@
                             </label>
                         </div>
                     </li>
-                    <li class="list-group-item border">
+                    <li class="list-group-item border bg-info text-white">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="bacon" id="bacon" value="bacon">
                             <label class="form-check-label" for="bacon">
@@ -172,7 +186,7 @@
                 </ul>
                 <div class="card-header border mt-3">Choose non-meats</div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item border">
+                    <li class="list-group-item border bg-info text-white">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="greenpeppers" id="greenpeppers" value="greenpeppers">
                             <label class="form-check-label" for="greenpeppers">
@@ -180,7 +194,7 @@
                             </label>
                         </div>
                     </li>
-                    <li class="list-group-item border">
+                    <li class="list-group-item border bg-info text-white">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="mushrooms" id="mushrooms" value="mushrooms">
                             <label class="form-check-label" for="mushrooms">
@@ -188,7 +202,7 @@
                             </label>
                         </div>
                     </li>
-                    <li class="list-group-item border">
+                    <li class="list-group-item border bg-info text-white">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="onions" id="onions" value="onions">
                             <label class="form-check-label" for="onions">
@@ -196,7 +210,7 @@
                             </label>
                         </div>
                     </li>
-                    <li class="list-group-item border">
+                    <li class="list-group-item border bg-info text-white">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="jalapenopeppers" id="jalapenopeppers" value="jalapenopeppers">
                             <label class="form-check-label" for="jalapenopeppers">
@@ -207,10 +221,11 @@
                 </ul>
             </div>
             <div class="card-footer">
-                <button type="submit" class="float-right btn btn-primary">Checkout</button>
+                <button type="submit" class="float-right btn btn-primary">Checkout<i class="fas fa-shopping-cart"></i></button>
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
