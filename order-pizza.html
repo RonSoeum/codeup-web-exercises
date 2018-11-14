@@ -16,7 +16,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse collapse show" id="navbarColor03" style="">
+        <div class="navbar-collapse collapse show" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Order online <span class="sr-only">(current)</span></a>
@@ -57,15 +57,16 @@
             </ul>
         </div>
 
-        <div  class="card">
-            <div id="sizecrust" class="card-header bg-info text-white">Choose size and crust</div>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <div class="card">
+                <div id="sizecrust" class="card-header bg-info text-white">Choose size and crust</div>
                 <div class="card-body">
                     <div class="card-header border">Hand Tossed</div>
                     <div class="card-body border-left border-right">Garlic seasoned crust with a rich, buttery taste.</div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item border bg-info text-white">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="small_ht" id="small_ht" value="small_ht">
+                                <input class="form-check-input" type="radio" name="size" id="small_ht" value="small_ht">
                                 <label class="form-check-label" for="small_ht">
                                         Small (10")
                                 </label>
@@ -73,21 +74,19 @@
                         </li>
                         <li class="list-group-item border bg-info text-white">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="medium_ht" id="medium_ht" value="medium_ht">
+                                <input class="form-check-input" type="radio" name="size" id="medium_ht" value="medium_ht">
                                 <label class="form-check-label" for="medium_ht">
                                         Medium (12")
                                 </label>
                             </div>
                         </li>
                     </ul>
-                </div>
-                <div class="card-body pt-0">
-                    <div class="card-header border">Crispy Thin</div>
+                    <div class="card-header border mt-3">Crispy Thin</div>
                     <div class="card-body border-left border-right">Thin enough for optimum crispy to crunchy ratio.</div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item border bg-info text-white">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="medium_ct" id="medium_ct" value="medium_ct">
+                                <input class="form-check-input" type="radio" name="size" id="medium_ct" value="medium_ct">
                                 <label class="form-check-label" for="medium_ct">
                                         Medium (12")
                                 </label>
@@ -95,7 +94,7 @@
                         </li>
                         <li class="list-group-item border bg-info text-white">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="large_ct" id="large_ct" value="large_ct">
+                                <input class="form-check-input" type="radio" name="size" id="large_ct" value="large_ct">
                                 <label class="form-check-label" for="large_ct">
                                         Large (14")
                                 </label>
@@ -103,127 +102,128 @@
                         </li>
                     </ul>
                 </div>
-            <div class="card-footer">
-                <button type="submit" class="float-right btn btn-primary">Next Step <i class="fas fa-caret-right"></i></button>
+                <div class="card-footer">
+                    <button type="button" class="float-right btn btn-primary">Next Step <i class="fas fa-caret-right"></i></button>
+                </div>
             </div>
-        </div>
 
-        <div class="card mt-4">
-            <div id="cheesesauce" class="card-header bg-info text-white">Choose Cheese and Sauce</div>
-            <div class="card-body">
-                <div class="card-header border">Cheese</div>
-                <div class="card-body border form-group bg-info text-white">
-                    <label for="much_c">How Much?</label>
-                    <select class="form-control" id="much_c">
-                        <option>Light</option>
-                        <option>Normal</option>
-                        <option>Extra</option>
-                        <option>Double</option>
-                    </select>
+            <div class="card mt-4">
+                <div id="cheesesauce" class="card-header bg-info text-white">Choose Cheese and Sauce</div>
+                <div class="card-body">
+                    <div class="card-header border">Cheese</div>
+                    <div class="card-body border form-group bg-info text-white">
+                        <label for="much_c">How Much?</label>
+                        <select class="form-control" id="much_c" name="much_c">
+                            <option>Light</option>
+                            <option>Normal</option>
+                            <option>Extra</option>
+                            <option>Double</option>
+                        </select>
+                    </div>
+                    <div class="card-header border">Sauce</div>
+                    <div class="card-body border m-0 form-group bg-info text-white">
+                        <label for="type_s">What Type?</label>
+                        <select class="form-control" id="type_s" name="type_s">
+                            <option>Tomato Sauce</option>
+                            <option>Marinara Sauce</option>
+                            <option>BBQ Sauce</option>
+                            <option>Alfredo Sauce</option>
+                        </select>
+                    </div>
+                    <div class="card-body border form-group mb-0 bg-info text-white">
+                        <label for="much_s">How Much?</label>
+                        <select class="form-control" id="much_s" name="much_s">
+                            <option>Light</option>
+                            <option>Normal</option>
+                            <option>Extra</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="card-header border">Sauce</div>
-                <div class="card-body border m-0 form-group bg-info text-white">
-                    <label for="type_s">What Type?</label>
-                    <select class="form-control" id="type_s">
-                        <option>Tomato Sauce</option>
-                        <option>Marinara Sauce</option>
-                        <option>BBQ Sauce</option>
-                        <option>Alfredo Sauce</option>
-                    </select>
-                </div>
-                <div class="card-body border form-group mb-0 bg-info text-white">
-                    <label for="much_s">How Much?</label>
-                    <select class="form-control" id="much_s">
-                        <option>Light</option>
-                        <option>Normal</option>
-                        <option>Extra</option>
-                    </select>
+                <div class="card-footer">
+                    <button type="button" class="float-right btn btn-primary">Next step <i class="fas fa-caret-right"></i></button>
+                    <button type="button" class="float-right btn btn-primary"><i class="fas fa-caret-left"></i> Previous step</button>
                 </div>
             </div>
-            <div class="card-footer">
-                <button type="submit" class="float-right btn btn-primary">Next step <i class="fas fa-caret-right"></i></button>
-                <button type="submit" class="float-right btn btn-primary"><i class="fas fa-caret-left"></i> Previous step</button>
-            </div>
-        </div>
 
-        <div class="card mt-4">
-            <div id="toppings" class="card-header bg-info text-white">Choose toppings</div>
-            <div class="card-body">
-                <div class="card-header border">Choose meats</div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item border bg-info text-white">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="beef" id="beef" value="beef">
-                            <label class="form-check-label" for="beef">
-                                Beef
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item border bg-info text-white">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="ham" id="ham" value="ham">
-                            <label class="form-check-label" for="ham">
-                                Ham
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item border bg-info text-white">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="phillysteak" id="phillysteak" value="phillysteak">
-                            <label class="form-check-label" for="phillysteak">
-                                Philly Steak
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item border bg-info text-white">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="bacon" id="bacon" value="bacon">
-                            <label class="form-check-label" for="bacon">
-                                Bacon
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-                <div class="card-header border mt-3">Choose non-meats</div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item border bg-info text-white">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="greenpeppers" id="greenpeppers" value="greenpeppers">
-                            <label class="form-check-label" for="greenpeppers">
-                                Green Peppers
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item border bg-info text-white">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="mushrooms" id="mushrooms" value="mushrooms">
-                            <label class="form-check-label" for="mushrooms">
-                                Mushrooms
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item border bg-info text-white">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="onions" id="onions" value="onions">
-                            <label class="form-check-label" for="onions">
-                                Onions
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item border bg-info text-white">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="jalapenopeppers" id="jalapenopeppers" value="jalapenopeppers">
-                            <label class="form-check-label" for="jalapenopeppers">
-                                Jalapeno Peppers
-                            </label>
-                        </div>
-                    </li>
-                </ul>
+            <div class="card mt-4 mb-5">
+                <div id="toppings" class="card-header bg-info text-white">Choose toppings</div>
+                <div class="card-body">
+                    <div class="card-header border">Choose meats</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border bg-info text-white">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="beef" id="beef" value="beef">
+                                <label class="form-check-label" for="beef">
+                                    Beef
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item border bg-info text-white">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="ham" id="ham" value="ham">
+                                <label class="form-check-label" for="ham">
+                                    Ham
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item border bg-info text-white">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="philly_steak" id="philly_steak" value="philly_steak">
+                                <label class="form-check-label" for="philly_steak">
+                                    Philly Steak
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item border bg-info text-white">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="bacon" id="bacon" value="bacon">
+                                <label class="form-check-label" for="bacon">
+                                    Bacon
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-header border mt-3">Choose non-meats</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border bg-info text-white">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="green_peppers" id="green_peppers" value="green_peppers">
+                                <label class="form-check-label" for="green_peppers">
+                                    Green Peppers
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item border bg-info text-white">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="mushrooms" id="mushrooms" value="mushrooms">
+                                <label class="form-check-label" for="mushrooms">
+                                    Mushrooms
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item border bg-info text-white">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="onions" id="onions" value="onions">
+                                <label class="form-check-label" for="onions">
+                                    Onions
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item border bg-info text-white">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="jalapeno_peppers" id="jalapeno_peppers" value="jalapeno_peppers">
+                                <label class="form-check-label" for="jalapeno_peppers">
+                                    Jalapeno Peppers
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="float-right btn btn-primary">Checkout<i class="fas fa-shopping-cart"></i></button>
+                </div>
             </div>
-            <div class="card-footer">
-                <button type="submit" class="float-right btn btn-primary">Checkout<i class="fas fa-shopping-cart"></i></button>
-            </div>
-        </div>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
