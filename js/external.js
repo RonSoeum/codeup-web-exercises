@@ -8,28 +8,28 @@ alert("Great, " + color + " is my favorite color too!")
 // Previous Exercise #3
 
 // Movie Rentals
-var theLittleMermaidDays = 3
-var brotherBearDays = 5
-var herculesDays = 1
-var pricePerDay = 3
-var totalPrice = (theLittleMermaidDays * pricePerDay) + (brotherBearDays * pricePerDay) + (herculesDays * pricePerDay)
+var theLittleMermaidDays = prompt("How many days do you want to rent The Litter Mermaid?")
+var brotherBearDays = prompt("How many days do you want to rent Brother Bears?")
+var herculesDays = prompt("How many days do you want to rent Hercules?")
+var pricePerDay = prompt("What is the price per day to rent a movie?")
+var totalPrice = (parseFloat(theLittleMermaidDays) * parseFloat(pricePerDay)) + (parseFloat(brotherBearDays) * parseFloat(pricePerDay)) + (parseFloat(herculesDays) * parseFloat(pricePerDay))
 alert("The price you have to pay for movie rentals is $" + totalPrice)
 
 // Weekly Pay
-var googleRate = 400
-var googleHours = 6
-var amazonRate = 380
-var amazonHours = 4
-var facebookRate = 350
-var facebookHours = 10
-var weeklyPay = (googleRate * googleHours) + (amazonRate * amazonHours) + (facebookRate * facebookHours)
+var googleRate = prompt("What is the hourly rate from working at Google?")
+var googleHours = prompt("How many hours did you work at Google this week?")
+var amazonRate = prompt("What is the hourly rate from working at Amazon?")
+var amazonHours = prompt("How many hours did you work at Amazon this week?")
+var facebookRate = prompt("What is the hourly rate from working at Facebook?")
+var facebookHours = prompt("How many hours did you work at Facebook this week?")
+var weeklyPay = (parseFloat(googleRate) * parseFloat(googleHours)) + (parseFloat(amazonRate) * parseFloat(amazonHours)) + (parseFloat(facebookRate) * parseFloat(facebookHours))
 alert("Your weekly payment for contractor work is $" + weeklyPay)
 
 // Class Enrollment
 var classHasRoom = confirm("Does the class have room for more students?")
 var classScheduleGood = confirm("Does your current schedule conflict with the class?")
 var canBeEnrolled = classHasRoom && !classScheduleGood
-alert("Eligible for class enrollment? " + canBeEnrolled)
+alert("It is " + canBeEnrolled + " that you can enroll in this class.")
 
 // Product Offer
 var itemsPurchased = prompt("How many items are you purchasing?")
@@ -37,4 +37,4 @@ var purchaseEligility = itemsPurchased > 2
 var premiumMember = confirm("Are you a premium member")
 var offerNotExpired = true
 var productOffer = offerNotExpired && (purchaseEligility || premiumMember)
-alert("Eligible for product offer? " + productOffer)
+alert("It is " + productOffer + " that you are eligible for the product offer.")
