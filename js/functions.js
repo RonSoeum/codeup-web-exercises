@@ -32,7 +32,6 @@ console.log(helloMessage);
  */
 
 var myName = "Ron Soeum";
-sayHello(myName);
 console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -58,10 +57,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 
 function isTwo (number) {
-    return number == 2;
+    return number === 2;
 }
-isTwo(random);
-console.log(isTwo(random));
+console.log("The random number is " + random);
+console.log("The random number returns " + isTwo(random));
 
 /**
  * TODO:
@@ -86,9 +85,9 @@ function calculateTip (tipPercentage, totalBill) {
  * then display the dollar amount they should tip
  */
 
-var totalBill = prompt("What is the bill total?");
-var tipPercentage = prompt("What is the percentage you would like to tip?");
-var amountToTip = calculateTip(tipPercentage, totalBill);
+var totalBill = parseFloat(prompt("What is the bill total?"));
+var tipPercentage = parseFloat(prompt("What is the percentage you would like to tip? Ex. .20 for 20%"));
+var amountToTip = parseFloat(calculateTip(tipPercentage, totalBill));
 alert("The tip amount is $" + amountToTip.toFixed(2));
 
 /**
@@ -108,8 +107,9 @@ alert("The tip amount is $" + amountToTip.toFixed(2));
 
 function applyDiscount (originalPrice, discountPercent) {
     var discountAmount = originalPrice * discountPercent;
-    return originalPrice - discountAmount.toFixed(2);
+    return originalPrice - discountAmount;
 }
-var originalPrice = prompt("What is the original price before the discount?");
-var discountPercent = prompt("What is the discount percentage?");
-alert("The price after the discount is applied is $" + applyDiscount(originalPrice, discountPercent));
+var originalPrice = parseFloat(prompt("What is the original price before the discount?"));
+var discountPercent = parseFloat(prompt("What is the discount percentage? Ex. .20 for 20%"));
+var finalPrice = parseFloat(applyDiscount(originalPrice, discountPercent));
+alert("The price after the discount applied is $" + finalPrice.toFixed(2));
