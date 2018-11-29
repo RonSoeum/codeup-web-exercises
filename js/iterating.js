@@ -23,12 +23,12 @@
      * accessing each element's index.
      */
 
-    console.log(names[0]);
-    console.log(names[1]);
-    console.log(names[2]);
-    console.log(names[3]);
+    console.log('names: ' + names[0]);
+    console.log('names: ' + names[1]);
+    console.log('names: ' + names[2]);
+    console.log('names: ' + names[3]);
 
-    console.log('Here is the list of names in the names array: ' + names[0] + ', ' + names[1] + ', ' + names[2] + ', and ' + names[3] + '.');
+    // console.log('Here is the list of names in the names array: ' + names[0] + ', ' + names[1] + ', ' + names[2] + ', and ' + names[3] + '.');
 
     /**
      * TODO:
