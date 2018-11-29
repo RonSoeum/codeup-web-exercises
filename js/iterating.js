@@ -63,30 +63,24 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
     function first (array) {
-        console.log('The first item in the array ' + array + ' is: ' + array[0] + '.');
         return array[0];
     }
 
     function second (array) {
-        console.log('The second item in the array ' + array + ' is: ' + array[1] + '.');
         return array[1];
 
     }
 
     function last (array) {
-        console.log('The last item in the array ' + array + ' is: ' + array[array.length -1] + '.');
-        return array[array.length -1];
-
+        return array[array.length - 1];
     }
 
-    first(numbers);
+    console.log('first: ' + first(names));
 
-    second(numbers);
+    console.log('second: ' + second(names));
 
-    last(numbers);
+    console.log('last: ' + last(names));
 
     // Bonus
 
@@ -103,37 +97,25 @@
     console.log('oneHundred: ' + oneHundred());
 
     function reverse (array) {
-        var arrayReverse = array.slice().reverse();
-
-        console.log('Here is the array in reverse: ' + arrayReverse);
-
-        return arrayReverse;
+        return array.slice().reverse();
     }
 
-    reverse(numbers);
+    console.log('reverse: ' + reverse(names));
 
     function sumAll (array) {
-        var arraySum = array.reduce(function (a, b) {
+        return array.reduce(function (a, b) {
             return a + b;
         }, 0);
-
-        console.log('The sum is: ' + arraySum);
-
-        return arraySum;
     }
 
-    sumAll(oneHundred());
+    console.log('The sum is: ' + sumAll(oneHundred()));
 
     function multiplyAll (array) {
-        var arrayMultiply = array.reduce(function (a, b) {
+        return array.reduce(function (a, b) {
             return a * b;
         });
-
-        console.log('The product is: ' + arrayMultiply);
-
-        return arrayMultiply;
     }
 
-    multiplyAll(oneHundred());
+    console.log('The product is: ' + multiplyAll(oneHundred()));
 
 })();
