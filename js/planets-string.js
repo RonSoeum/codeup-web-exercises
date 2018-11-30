@@ -51,4 +51,14 @@
 
     planetsArray.forEach(arrayToUl(document.getElementById('myList')));
 
+    // Class Example
+
+    var htmlString = '<ul><li>';
+
+    htmlString += planetsArray.join('</li><li>');
+
+    htmlString += '</li></ul>';
+
+    document.body.innerHTML += htmlString;
+
 })();
