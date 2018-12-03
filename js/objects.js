@@ -12,9 +12,10 @@
  */
 
 var person = {
-    firstName: 'Ron',
-    lastName: 'Soeum'
+    firstName: 'Ron'
 };
+
+person.lastName = 'Soeum';
 
 console.log(person.firstName);
 console.log(person.lastName);
@@ -30,7 +31,7 @@ console.log(person.lastName);
  */
 
 person.sayHello = function() {
-    return 'Hello from ' + person.firstName + ' ' + person.lastName + '!'
+    return 'Hello from ' + this.firstName + ' ' + this.lastName + '!'
 };
 
 console.log(person.sayHello());
@@ -71,6 +72,18 @@ shoppers.forEach(function(shopper) {
     console.log(shopHEB(shopper.name, shopper.amount))
 });
 
+// Class Example
+//
+// function checkout(clients) {
+//     clients.forEach(function(client) {
+//         var discount = (client.amount >= 200) ? client.amount * 0.12 : 0;
+//         var total = client.amount - discount;
+//         console.log(client.name + ' ' + client.amount + ' ' + discount + ' ' + total);
+//     })
+// }
+//
+// checkout(shoppers);
+
 /** TODO:
  * Create an array of objects that represent books and store it in a
  * variable named `books`. Each object should have a title and an author
@@ -85,20 +98,41 @@ shoppers.forEach(function(shopper) {
  */
 
 var books = [
-    {title: 'Lincoln in the Bardo',
-        author: {firstName: 'George', lastName: 'Saunders'}},
-
-    {title: 'Everything Happens for a Reason and Other Lies I\'ve Loved',
-        author: {firstName: 'Kate', lastName: 'Bowler'}},
-
-    {title: 'Origin Story: A Big History of Everything',
-        author: {firstName: 'David', lastName: 'Christian'}},
-
-    {title: 'Factfulness',
-        author: {firstName: 'Hans', lastName: 'Rosling'}},
-
-    {title: 'Leonardo Da Vinci',
-        author: {firstName: 'Walter', lastName: 'Isaacson'}}
+    {
+        title: 'Lincoln in the Bardo',
+        author: {
+            firstName: 'George',
+            lastName: 'Saunders'
+        }
+    },
+    {
+        title: 'Everything Happens for a Reason and Other Lies I\'ve Loved',
+        author: {
+            firstName: 'Kate',
+            lastName: 'Bowler'
+        }
+        },
+    {
+        title: 'Origin Story: A Big History of Everything',
+        author: {
+            firstName: 'David',
+            lastName: 'Christian'
+        }
+        },
+    {
+        title: 'Factfulness',
+        author: {
+            firstName: 'Hans',
+            lastName: 'Rosling'
+        }
+        },
+    {
+        title: 'Leonardo Da Vinci',
+        author: {
+            firstName: 'Walter',
+            lastName: 'Isaacson'
+        }
+    }
 ];
 
 console.log(books[0].title);
@@ -142,12 +176,14 @@ console.log(books[4].author.lastName);
  *      ...
  */
 
-books.forEach(function(book, index) {
-    console.log('Book # ' + (index + 1));
-    console.log('Title: ' + book.title);
-    console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
-    console.log('---');
-});
+//Refactored for Bonus
+//
+// books.forEach(function(book, index) {
+//     console.log('Book # ' + (index + 1));
+//     console.log('Title: ' + book.title);
+//     console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
+//     console.log('---');
+// });
 
 /**
  * Bonus:
@@ -160,35 +196,152 @@ books.forEach(function(book, index) {
  *   `showBookInfo` function.
  */
 
-function CreateBook(bookTitle, authorFirstName, authorLastName) {
-    this.book = {
-        title: bookTitle,
+// My Code
+//
+// function CreateBook(bookTitle, authorFirstName, authorLastName) {
+//     this.book = {
+//         title: bookTitle,
+//         author: {
+//             firstName: authorFirstName,
+//             lastName: authorLastName
+//         }
+//     };
+// }
+//
+// var book1 = new CreateBook('Lincoln in the Bardo', 'George', 'Saunders');
+// var book2 = new CreateBook('Everything Happens for a Reason and Other Lies I\'ve Loved', 'Kate', 'Bowler');
+// var book3 = new CreateBook('Origin Story: A Big History of Everything', 'David', 'Christian');
+// var book4 = new CreateBook('Factfulness', 'Hans', 'Rosling');
+// var book5 = new CreateBook('Leonardo Da Vinci', 'Walter','Isaacson');
+//
+// var boooks = [book1, book2, book3, book4, book5];
+//
+// function showBookInfo(book, index) {
+//     console.log('Book # ' + (index + 1));
+//     console.log('Title: ' + book.book.title);
+//     console.log('Author: ' + book.book.author.firstName + ' ' + book.book.author.lastName);
+//     console.log('---');
+// }
+//
+// boooks.forEach(function(book, index) {
+//    showBookInfo(book, index)
+// });
+
+// Class Example
+
+function createBook(title, author) {
+    var name = author.split(' ');
+    return {
+        title: title,
         author: {
-            firstName: authorFirstName,
-            lastName: authorLastName
+            firstName: name[0],
+            lastName: name[1]
         }
-    };
+    }
 }
 
-var book1 = new CreateBook('Lincoln in the Bardo', 'George', 'Saunders');
-var book2 = new CreateBook('Everything Happens for a Reason and Other Lies I\'ve Loved', 'Kate', 'Bowler');
-var book3 = new CreateBook('Origin Story: A Big History of Everything', 'David', 'Christian');
-var book4 = new CreateBook('Factfulness', 'Hans', 'Rosling');
-var book5 = new CreateBook('Leonardo Da Vinci', 'Walter','Isaacson');
+books.push(createBook('Harry Potter', 'JK Rowling'));
 
-var boooks = [book1, book2, book3, book4, book5];
-
-function showBookInfo(book, index) {
+books.forEach(function(book, index) {
     console.log('Book # ' + (index + 1));
-    console.log('Title: ' + book.book.title);
-    console.log('Author: ' + book.book.author.firstName + ' ' + book.book.author.lastName);
+    showBookInfo(book)
+});
+
+function showBookInfo(book) {
+    console.log('Title: ' + book.title);
+    console.log('Author:' + book.author.firstName + ' ' + book.author.lastName);
     console.log('---');
 }
 
-boooks.forEach(function(book, index) {
-   showBookInfo(book, index)
-});
+// More Bonus: Bonus 1
 
+var dog = {
+    breed: 'pomeranian',
+    weightInPounds: 7,
+    age: 1,
+    color: 'cream',
+    sterilized: true,
+    shotRecords: [
+        {vaccine: 'heart worm', date: 'Dec 1, 2018'},
+        {vaccine: 'bordetella', date: 'Nov 15, 2018'},
+        {vaccine: 'canine adenovirus-2', date: 'Oct 7, 2018'},
+        {vaccine: 'canine parvovirus', date: 'Oct 7, 2018'}
+        ],
+    bark: function() {
+        console.log('Woof!');
+    },
+    getOlder: function() {
+        return ++this.age;
+    },
+    fix: function() {
+        if(this.sterilized === false) {
+            return this.sterilized === true;
+        }
+    },
+    vaccinate: function(vaccine, date) {
+
+    }
+};
+
+// Bonus 2
+
+var bookks = [
+    {title: 'Lincoln in the Bardo',
+        author: {firstName: 'George', lastName: 'Saunders'}, available: 'Dec 1, 2018/09:05'},
+
+    {title: 'Everything Happens for a Reason and Other Lies I\'ve Loved',
+        author: {firstName: 'Kate', lastName: 'Bowler'}, available: 'Dec 2, 2018/10:10'},
+
+    {title: 'Origin Story: A Big History of Everything',
+        author: {firstName: 'David', lastName: 'Christian'}, available: 'Dec 3, 2018/11:15'},
+
+    {title: 'Factfulness',
+        author: {firstName: 'Hans', lastName: 'Rosling'}, available: 'Dec 4, 2018/12:20'},
+
+    {title: 'Leonardo Da Vinci',
+        author: {firstName: 'Walter', lastName: 'Isaacson'}, available: 'Dec 5, 2018/12:25'},
+
+    {genre: ['Historical Fiction', 'Magical Realism', 'Non-Fiction', 'Faith & Spirituality', 'Biography & Memoir', 'History', 'Science & Medicine', 'Biography']},
+    {available: true},
+    {dateAvailable: ''}
+];
+
+// Historical fiction Magical realism
+//
+// nonfiction, faith & spirituality, biography & memoir
+//
+// HISTORY / SCIENCE & MEDICINE
+//
+// Non-fiction
+//
+// Biography
+
+// Bonus 3
+
+// More
+
+var jackBox = {
+    triggered: false,
+    intervalID: null,
+    play: function() {
+        if(this.triggered === false) {
+                console.log(this.lyrics.forEach(function (element) {
+                    return element;
+                }));
+            return this.triggered === true;
+        }
+    },
+    windUp: function() {
+        window.stop();
+        return this.triggered === false;
+    },
+    lyrics: ['All a-...', "-round the ...", "mulberry...", "bush, The...", "monkey...", "chased the...", "wea-...", "-sel...", "The monkey...", "stopped to...", "pull up his...", "sock,...", "Pop!...", "goes the...", "wea-...", "-sel."]
+};
+
+
+
+// Alternative Code
+//
 // for(var i = 0; i < boooks.length; i++) {
 //     showBookInfo(boooks[i], i);
 // }
