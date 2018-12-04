@@ -11,6 +11,7 @@
  *  > console.log(person.lastName) // "Sanchez"
  */
 
+
 var person = {
     firstName: 'Ron'
 };
@@ -19,6 +20,7 @@ person.lastName = 'Soeum';
 
 console.log(person.firstName);
 console.log(person.lastName);
+
 
 /**
  * TODO:
@@ -36,6 +38,7 @@ person.sayHello = function() {
 
 console.log(person.sayHello());
 
+
 /** TODO:
  * HEB has an offer for the shoppers that buy products amounting to
  * more than $200. If a shopper spends more than $200, they get a 12%
@@ -50,39 +53,24 @@ console.log(person.sayHello());
  * and console.log the relevant messages for each person
  */
 
+
 var shoppers = [
     {name: 'Cameron', amount: 180},
     {name: 'Ryan', amount: 250},
     {name: 'George', amount: 320}
 ];
 
-function shopHEB(shopper, spend) {
-    if (spend > 200) {
-        var gotDiscount = parseFloat(spend) * .12;
-        var uPay = spend - gotDiscount;
-        var payMe = 'receives a discount of $' + gotDiscount.toFixed(2) + '.' + '\n'
-            + 'The total amount after the discount is $' + uPay.toFixed(2);
-    } else {
-        var payMe = 'did not receive a discount.';
-    }
-    return shopper + ' spends $' + spend.toFixed(2) + ' and ' + payMe;
+function shopHEB(arrayOfShoppers) {
+    arrayOfShoppers.forEach(function(shopper) {
+        var discountAmount = (shopper.amount >= 200) ? shopper.amount * .12 : 0;
+        var discountApplied = (discountAmount > 0) ? 'receives a discount of $' + discountAmount.toFixed(2) + '.' : 'did not receive a discount.';
+        var uPay = shopper.amount - discountAmount;
+        console.log(shopper.name + ' spends $' + shopper.amount + " and " + discountApplied + '\n' + 'The total amount after the discount is $' + uPay.toFixed(2));
+    })
 }
 
-shoppers.forEach(function(shopper) {
-    console.log(shopHEB(shopper.name, shopper.amount))
-});
+shopHEB(shoppers);
 
-// Class Example
-//
-// function checkout(clients) {
-//     clients.forEach(function(client) {
-//         var discount = (client.amount >= 200) ? client.amount * 0.12 : 0;
-//         var total = client.amount - discount;
-//         console.log(client.name + ' ' + client.amount + ' ' + discount + ' ' + total);
-//     })
-// }
-//
-// checkout(shoppers);
 
 /** TODO:
  * Create an array of objects that represent books and store it in a
@@ -96,6 +84,7 @@ shoppers.forEach(function(shopper) {
  * > console.log(books[0].author.firstName) // "Douglas"
  * > console.log(books[0].author.lastName) // "Adams"
  */
+
 
 var books = [
     {
@@ -135,6 +124,7 @@ var books = [
     }
 ];
 
+
 console.log(books[0].title);
 console.log(books[0].author.firstName);
 console.log(books[0].author.lastName);
@@ -150,6 +140,7 @@ console.log(books[3].author.lastName);
 console.log(books[4].title);
 console.log(books[4].author.firstName);
 console.log(books[4].author.lastName);
+
 
 /**
  * TODO:
@@ -176,6 +167,7 @@ console.log(books[4].author.lastName);
  *      ...
  */
 
+
 //Refactored for Bonus
 //
 // books.forEach(function(book, index) {
@@ -184,6 +176,7 @@ console.log(books[4].author.lastName);
 //     console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
 //     console.log('---');
 // });
+
 
 /**
  * Bonus:
@@ -195,6 +188,7 @@ console.log(books[4].author.lastName);
  *   outputs the information described above. Refactor your loop to use your
  *   `showBookInfo` function.
  */
+
 
 // My Code
 //
@@ -252,6 +246,7 @@ function showBookInfo(book) {
     console.log('Author:' + book.author.firstName + ' ' + book.author.lastName);
     console.log('---');
 }
+
 
 // More Bonus: Bonus 1
 
