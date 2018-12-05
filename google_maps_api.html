@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps API</title>
+    <style type="text/css">
+        #map-canvas1 {
+            width: 90%;
+            height: 481px;
+        }
+        #map-canvas2 {
+            width: 90%;
+            height: 481px;
+        }
+        #map-canvas3 {
+            width: 90%;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <!--HTML-->
+    <h2>Zoom level 5</h2>
+    <div id="map-canvas1"></div>
+    <h2>Zoom level 15</h2>
+    <div id="map-canvas2"></div>
+    <h2>Zoom level 20</h2>
+    <div id="map-canvas3"></div>
+
+    <!--Load the Google Maps API-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoT5Lfo2qBnxH39mNuU92oGaPCWiq1yO8"></script>
+
+    <!--Javascript-->
+    <script type="text/javascript">
+        "use strict";
+        var address = "2817 Maple Ave, Dallas, TX 75201";
+        var geocoder = new google.maps.Geocoder();
+        var mapOptions1 = {
+            zoom: 5,
+            center: {
+                lat:  32.796812,
+                lng: -96.806589
+            }
+        };
+        var mapOptions2 = {
+            zoom: 15,
+            center: {
+                lat:  32.796812,
+                lng: -96.806589
+            }
+        };
+        var mapOptions3 = {
+            zoom: 20,
+            center: {
+                lat:  32.796812,
+                lng: -96.806589
+            }
+        };
+
+        // Render the map1
+        var map1 = new google.maps.Map(document.getElementById("map-canvas1"), mapOptions1);
+        //Geocode for map1
+        geocoder.geocode({ "address": address }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map1.setCenter(results[0].geometry.location);
+            } else {
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+
+        // Render the map2
+        var map2 = new google.maps.Map(document.getElementById("map-canvas2"), mapOptions2);
+        //Geocode for map2
+        geocoder.geocode({ "address": address }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map2.setCenter(results[0].geometry.location);
+            } else {
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+
+        // Render the map3
+        var map3 = new google.maps.Map(document.getElementById("map-canvas3"), mapOptions3);
+        //Geocode for map3
+        geocoder.geocode({ "address": address }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map3.setCenter(results[0].geometry.location);
+            } else {
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>
