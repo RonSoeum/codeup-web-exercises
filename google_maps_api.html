@@ -39,6 +39,11 @@
             position: uchiLocation,
             map: map
         });
+        // Infowindow for uchiMarker
+        var uchiInfowindow = new google.maps.InfoWindow({
+            content: "Uchi Dallas"
+        });
+        uchiInfowindow.open(map, uchiMarker);
         // Geocode for map
         geocoder.geocode({ "address": uchiAddress }, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
@@ -47,8 +52,6 @@
                 alert("Geocoding was not successful - STATUS: " + status);
             }
         });
-
-
 
     </script>
 </body>
