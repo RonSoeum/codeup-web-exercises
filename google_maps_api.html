@@ -5,14 +5,57 @@
     <title>Google Maps API</title>
     <style type="text/css">
         #map-canvas {
-            width: 90%;
-            height: 481px;
+            margin: 0;
+            padding: 0;
+            max-width: none;
+            height: 500px;
+        }
+        #map-canvas img {
+            max-width: none !important;
+        }
+        #iw-container {
+            margin: 0;
+            padding: 0;
+        }
+        #iw-container .iw-title {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            padding: 10px;
+            background-color: #48b5e9;
+            color: white;
+            margin: 0;
+            border-radius: 2px 2px 0 0;
+        }
+        #iw-container .iw-content {
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: 400;
+            margin-right: 1px;
+            padding: 15px 5px 20px 15px;
+            max-height: 150px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .iw-content img {
+            float: right;
+            margin: 0 5px 5px 10px;
+        }
+        .iw-subTitle {
+            font-size: 16px;
+            font-weight: 700;
+            padding: 0;
+        }
+        .iw-br {
+            display: block;
+            content: "";
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <!--HTML-->
-    <h2>Map of Uchi</h2>
+    <h2>Map of Uchi Dallas</h2>
     <div id="map-canvas"></div>
 
     <!--Load the Google Maps API-->
@@ -21,29 +64,17 @@
     <!--Javascript-->
     <script type="text/javascript">
         "use strict";
+        var center = new google.maps.LatLng(32.796891, -96.806478);
         var uchiAddress = "2817 Maple Ave, Dallas, TX 75201";
         var uchiLocation = { lat: 32.796891, lng: -96.806478 };
         var geocoder = new google.maps.Geocoder();
         var mapOptions = {
             zoom: 18,
-            center: {
-                lat:  32.796891,
-                lng: -96.806478
-            }
+            center: center,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-
         // Render the map
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-        // Marker for map
-        var uchiMarker = new google.maps.Marker({
-            position: uchiLocation,
-            map: map
-        });
-        // Infowindow for uchiMarker
-        var uchiInfowindow = new google.maps.InfoWindow({
-            content: "Uchi Dallas"
-        });
-        uchiInfowindow.open(map, uchiMarker);
         // Geocode for map
         geocoder.geocode({ "address": uchiAddress }, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
@@ -51,6 +82,37 @@
             } else {
                 alert("Geocoding was not successful - STATUS: " + status);
             }
+        });
+        // InfoWindow for Marker
+        var uchiContent = '<div id="iw-container">' +
+            '<div class="iw-title">Uchi Dallas</div>' +
+            '<div class="iw-content">' +
+            '<div class="iw-subTitle">Restaurant</div>' +
+            '<img src="images/UchiDallas_web-360x360.jpg" alt="Uchi Dallas Restaurant" height="180" width="180">' +
+            '<p>Sleek destination offering a menu of modern Japanese cuisine, known for its cooked seafood & sushi.</p>' +
+            '<div class="iw-subTitle">Contacts</div>' +
+            '<p>2817 Maple Ave, Dallas, TX 75201<br>' +
+            '<br class="iw-br">Phone: (214) 855-5454<br>Website: <a href="https://uchidallas.com/" target="_blank">www.uchidallas.com</a></p>' +
+            '</div>' +
+            '</div>';
+        var uchiInfoWindow = new google.maps.InfoWindow({
+            content: uchiContent,
+            maxWidth: 440
+        });
+        // Marker for map
+        var uchiMarker = new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
+            position: uchiLocation,
+            map: map,
+            title: 'Uchi Dallas'
+        });
+        // Open InfoWindow
+        google.maps.event.addListener(uchiMarker, 'click', function() {
+            uchiInfoWindow.open(map, uchiMarker);
+        });
+        // Close InfoWindow
+        google.maps.event.addListener(map, 'click', function() {
+            uchiInfoWindow.close();
         });
 
     </script>
