@@ -96,8 +96,6 @@ var table = document.createElement('table'),
     tbody.appendChild(tr);
     }
 
-
-
 // function unitsArray (array) {
 //     var unitsSold = [];
 //     for (var i = 0; i < array.length; i++) {
@@ -106,3 +104,45 @@ var table = document.createElement('table'),
 //     return unitsSold;
 // }
 // var unitsSold = unitsArray(employeeStat);
+
+
+// Math Exercise
+var numbers = [3, 2, 1, Infinity];
+var numbers2 = [5, 4, 2, -100];
+var arrayOfNumbers = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+];
+
+var getHighest = function(array){
+    return Math.max.apply(null, array);
+};
+
+console.log(getHighest(numbers));
+
+var getLowest = function(array){
+    return Math.min.apply(null, array);
+};
+
+console.log(getLowest(numbers2));
+
+var sumOfArray = function(array){
+    return array.reduce(function(a,b){
+        return a+b
+    });
+};
+
+var sumAllNumbers = function(array) {
+    var arrayOfSums = [];
+    var sumOfElement = 0;
+
+    array.forEach(function(array){
+        sumOfElement = sumOfArray(array);
+        arrayOfSums.push(sumOfElement);
+    });
+
+    return sumOfArray(arrayOfSums);
+};
+
+console.log(sumAllNumbers(arrayOfNumbers));
