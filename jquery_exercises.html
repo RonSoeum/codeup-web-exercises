@@ -27,7 +27,7 @@
     "use strict";
 
     $(document).ready(function(){
-        $('h1').click(function(){
+        $('#title').click(function(){
             $(this).css('background-color', 'red');
         });
 
@@ -38,9 +38,10 @@
         $('li').hover(
             function(){
                 $(this).css('color', 'red');
+                $(this).css('font-size', '25px');
             },
             function(){
-                $(this).css('color', 'black');
+                $(this).removeAttr('style');
             }
         );
     });
