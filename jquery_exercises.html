@@ -9,16 +9,16 @@
 <div>
     <h1 id="title">jQuery Selectors</h1>
 
-    <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-    <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
     <h1 class="second-title">Javascript</h1>
 
     <ul id="unOrder">
-        <li class="list">Lorem ipsum dolor sit amet.</li>
-        <li class="list">Lorem ipsum dolor sit amet.</li>
-        <li class="list">Lorem ipsum dolor sit amet.</li>
+        <li class="codeup">Lorem ipsum dolor sit amet.</li>
+        <li class="codeup">Lorem ipsum dolor sit amet.</li>
+        <li class="codeup">Lorem ipsum dolor sit amet.</li>
     </ul>
 </div>
 
@@ -26,11 +26,7 @@
 <script>
     "use strict";
 
-    $(document).ready(function() {
-        alert( 'The DOM has finished loading!' );
-        alert($('#title').html());
-        alert($('#unOrder').html());
-    });
+    $('.codeup').css('border', '1px solid red');
 
 </script>
 </body>
