@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function(){
+
+        var konami = function (callback) {
+            var code = "38,38,40,40,37,39,37,39,66,65";
+            var k = [];
+            $(document).keydown(function (e) {
+                k.push(e.keyCode);
+                if (k.toString().indexOf(code) >= 0) {
+                    k = [];
+                    $(this).unbind('keydown', konami);//Recursive Function
+                    callback(e);
+                }
+            });
+        };
+
+        konami(function(){
+            alert('Konami Code Activated');
+        });
+
+        // $(document).keyup(function(event){
+        //     console.log(event.keyCode);
+        // });
+        //
+        // var konami = function(){
+        //     //Declare variables
+        //     var konamikeys = [38,38,40,40,37,39,37,39,66,65],
+        //         started = false,
+        //         count = 0;
+        //
+        //     //Trigger event
+        //     $(document).keydown(function(e){
+        //         var reset = function() {
+        //             started = false;
+        //             count = 0;
+        //             },
+        //             key = e.keyCode;
+        //
+        //         // Begin watching if first key in sequence was pressed.
+        //         if(!started){
+        //             if(key === 38){
+        //                 started = true;
+        //             }
+        //         }
+        //
+        //         // If we've started, pay attention to key presses, looking for right sequence.
+        //         if(started){
+        //
+        //             if(konamikeys[count] === key){
+        //                 count++;
+        //             }else{
+        //                 // Incorrect key, restart.
+        //                 reset();
+        //             }
+        //             if(count === 10){
+        //                 // Success!
+        //                 console.log('aksdfjhasdjfhkasdf');
+        //                 reset();
+        //             }
+        //         }else{
+        //             reset();
+        //         }
+        //     });//---keydown()---
+        // };//---konami()---
+        //
+        // konami();
+
+    });//---ready()---
+</script>
+</body>
+</html>
