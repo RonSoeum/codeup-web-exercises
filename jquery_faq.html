@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .invisible {
+        .invisible, #national-parks, #state-parks-texas, #state-parks-colorado {
             display: none;
         }
         .highlight {
             color: red;
         }
+        #hide > span {
+            color: green;
+            border: 1px solid #0C0C0C;
+            margin-left: .5em;
+        }
+        #hide > h1 {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
 
-    <a href="#" class="faq-button">Click for Yellowstone FAQs</a>
+    <div id="hide">
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span>x</span>
+    </div>
+
+    <h2 id="fade">Would you like to register for the website?</h2>
+
+    <a href="#" id="faq-button">Click for Yellowstone FAQs</a>
 
     <dl>
         <dt>How did Yellowstone get its name?</dt>
@@ -41,7 +56,7 @@
 
     <input id="last-li" type="submit" value="Change Color">
 
-    <h3 id="national-parks-heading">National Parks</h3>
+    <h3>National Parks</h3>
     <ul id="national-parks">
         <li>Arches</li>
         <li>Badlands</li>
@@ -73,7 +88,7 @@
         $(document).ready(function(){
 
             // Attribute Methods
-            $('.faq-button').click(function () {
+            $('#faq-button').click(function () {
                 $('dl > dd').toggleClass('invisible');
             });
             $('dl > dt').click(function (event) {
@@ -93,7 +108,18 @@
 
             $('ul').click(function () {
                 $(this).children().first().css('color', 'blue');
-            })
+            });
+
+            // Effects
+            $('#hide > span').click(function () {
+                $('#hide').hide();
+            });
+
+            $('h3').click(function () {
+                $(this).next().slideToggle();
+            });
+
+            $('#fade').hide().fadeIn(8000);
 
         });//--ready--
     </script>
