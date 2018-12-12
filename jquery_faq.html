@@ -39,21 +39,63 @@
         <dd class="invisible">Scientists estimate that the amount ranges from 3,700 gallons (for a short duration of 1.5 minutes) to 8,400 gallons (for a longer duration of 4.5 minutes).</dd>
     </dl>
 
+    <input id="last-li" type="submit" value="Change Color">
+
+    <h3 id="national-parks-heading">National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-colorado">
+        <li>Vega State Park</li>
+        <li>Golden Gate Canyon State Park</li>
+        <li>Barr Lake State Park</li>
+        <li>Roxborough State Park</li>
+        <li>Rifle Falls State Park</li>
+    </ul>
+
     <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
     <script>
         "use strict";
 
         $(document).ready(function(){
 
+            // Attribute Methods
             $('.faq-button').click(function () {
                 $('dl > dd').toggleClass('invisible');
             });
-
             $('dl > dt').click(function (event) {
                 $(this).toggleClass('highlight');
             });
 
-        });
+            // Traversing Methods
+            $('#last-li').click(function () {
+                $('ul').each(function () {
+                    $(this).children().last().css('background-color', 'yellow');
+                })
+            });
+
+            $('h3').click(function () {
+                $(this).next().children().css('font-weight', 'bold');
+            });
+
+            $('ul').click(function () {
+                $(this).children().first().css('color', 'blue');
+            })
+
+        });//--ready--
     </script>
 </body>
 </html>
