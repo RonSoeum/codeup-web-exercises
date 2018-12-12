@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .invisible {
+            display: none;
+        }
+        .highlight {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" class="faq-button">Click for Yellowstone FAQs</a>
+
+    <dl>
+        <dt>How did Yellowstone get its name?</dt>
+        <dd class="invisible">Yellowstone National Park is named after the Yellowstone River.</dd>
+        <dt>Is Yellowstone the most visited national park?</dt>
+        <dd class="invisible">Yellowstone is in the top five national parks for number of recreational visitors.</dd>
+        <dt>How many rangers work in Yellowstone?</dt>
+        <dd class="invisible">Approximately 773 people work for the National Park Service during the peak summer season.</dd>
+        <dt>How do you become a park ranger?</dt>
+        <dd class="invisible">Many National Park Service employees begin their careers as volunteers or as seasonal employees.
+        <dt>Can we swim in rivers and lakes?</dt>
+        <dd class="invisible">Swimming is not recommended because most lakes and streams are dangerously cold.</dd>
+        <dt>What is the highest peak in the park?</dt>
+        <dd class="invisible">Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>
+        <dt>How tall is Mt. Washburn?</dt>
+        <dd class="invisible">At 10,243 feet, the Mt. Washburn peak can be seen from many locations in the park.</dd>
+        <dt>How high does Old Faithful erupt and how long will it last?</dt>
+        <dd class="invisible">Old Faithful can vary in height from 106-184 feet (32–56 m) with an average near 130 feet (40 m).</dd>
+        <dt>I heard Old Faithful isn't as faithful as it used to be. Is it slowing down?</dt>
+        <dd class="invisible">The famous geyser currently erupts around 17 times a day and can be predicted with a 90 percent confidence rate within a 10 minute variation.</dd>
+        <dt>How many gallons of water are expelled during an eruption?</dt>
+        <dd class="invisible">Scientists estimate that the amount ranges from 3,700 gallons (for a short duration of 1.5 minutes) to 8,400 gallons (for a longer duration of 4.5 minutes).</dd>
+    </dl>
+
+    <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+    <script>
+        "use strict";
+
+        $(document).ready(function(){
+
+            $('.faq-button').click(function () {
+                $('dl > dd').toggleClass('invisible');
+            });
+
+            $('dl > dt').click(function (event) {
+                $(this).toggleClass('highlight');
+            });
+
+        });
+    </script>
+</body>
+</html>
