@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <style>
         .invisible, #national-parks, #state-parks-texas, #state-parks-colorado {
             display: none;
@@ -10,12 +13,12 @@
         .highlight {
             color: red;
         }
-        #hide > span {
+        span {
             color: green;
             border: 1px solid #0C0C0C;
             margin-left: .5em;
         }
-        #hide > h1 {
+        #hide > h1, #fade > h2 {
             display: inline-block;
         }
     </style>
@@ -27,7 +30,9 @@
         <span>x</span>
     </div>
 
-    <h2 id="fade">Would you like to register for the website?</h2>
+    <div id="fade">
+        <h2>Would you like to register for the website?</h2><a href="#"><span>register</span></a>
+    </div>
 
     <a href="#" id="faq-button">Click for Yellowstone FAQs</a>
 
@@ -103,7 +108,7 @@
             });
 
             $('h3').click(function () {
-                $(this).next().children().css('font-weight', 'bold');
+                $(this).next().css('font-weight', 'bold').slideToggle();
             });
 
             $('ul').click(function () {
@@ -115,9 +120,9 @@
                 $('#hide').hide();
             });
 
-            $('h3').click(function () {
-                $(this).next().slideToggle();
-            });
+            // $('h3').click(function () {
+            //     $(this).next().slideToggle('');
+            // });
 
             $('#fade').hide().fadeIn(8000);
 
