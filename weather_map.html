@@ -241,9 +241,10 @@
                         $('.weatherBox3').empty();
                         weather(latitude, longitude);
                     });
-                    console.log('search marker' + longitude);
-                    console.log('search marker' + latitude);
+                    map.fitBounds(bounds);
+                    searchBox.set('map', map);
                 });// Search Markers
+
 
                 // Get long & lat
                 // google.maps.event.addListener(searchBox, 'places_changed', function() {
@@ -284,17 +285,11 @@
             })();// Google Maps API
 
 
-
-            console.log('between' + latitude);
-            console.log('between' + longitude);
-            var callWeatherAPI = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&APPID=490c989b60b09d95886b0ecd1b824208";
-
-
             // Weather Map API
-            var weather = function(a, b) {
+            var weather = function() {
 
-                console.log('weather' + a);
-                console.log('weather' + b);
+                var callWeatherAPI = "http://api.openweathermap.org/data/2.5/forecast?lat="
+                    + latitude + "&lon=" + longitude + "&APPID=490c989b60b09d95886b0ecd1b824208";
 
                 var windDirection = function(degree){
                     if(degree>337.5) return 'N';
@@ -309,8 +304,6 @@
                 };
 
                 $.get(callWeatherAPI, {
-                    lat: a,
-                    lon: b,
                     units: "imperial"
                 })
                     .done(function (data) {
@@ -337,7 +330,7 @@
                         alert('weather status: ' + status);
                     });// Weather Map API
             };
-            weather(latitude, longitude);
+            weather();
 
         });//--ready--
     </script>
