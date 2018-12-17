@@ -6,20 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Weather Map</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body class="container">
-        <h3 class="display-4 text-center mb-4">Weather & Atmosphere</h3>
-        <h4 id="location" class="display-5 d-inline-block m-0"></h4>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div class="weatherContainer row text-center">
-            <div class="weatherBox1 col-4"></div>
-            <div class="weatherBox2 col-4"></div>
-            <div class="weatherBox3 col-4"></div>
+        <h3 class="display-4 dark-red text-center mb-4">Weather & Atmosphere</h3>
+
+        <div class="row m-0 p-0">
+            <div class="col-3 m-0 p-0 light-red text-center">
+                <div class="weatherContainer row">
+                    <div class="col-12 dark-red border-rb">
+                        <h4 class="display-5">Forecast</h4>
+                    </div>
+                    <div class="weatherBox1 col-12 light-red border-rb"></div>
+                    <div class="weatherBox2 col-12 light-red border-rb"></div>
+                    <div class="weatherBox3 col-12 light-red border-rb"></div>
+                </div>
+            </div>
+            <div class="col-9 m-0 p-0">
+                <h4 id="location" class="display-5 light-green text-center border-b"></h4>
+                <div id="map" class=""></div>
+            </div>
         </div>
-        <div id="map" class="mb-4"></div>
-        <p class="text-center">&#169; 2018 Weather & Atmosphere, Inc. &#174; All Rights Reserved.</p>
+
+        <p class="light-green text-center py-1 mb-2">&#169; 2018 Weather & Atmosphere, Inc. &#174; All Rights Reserved.</p>
+        <input id="pac-input" class="controls" type="text" placeholder="Search...">
 
     <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoT5Lfo2qBnxH39mNuU92oGaPCWiq1yO8&libraries=places"></script>
